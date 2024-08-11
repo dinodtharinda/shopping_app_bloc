@@ -17,6 +17,4 @@ final class AuthFailure extends AuthState {
   AuthFailure({required this.error});
 }
 
-abstract class AuthActionState extends AuthState {}
-
-class AuthNavigateToHomeActionState extends AuthActionState {}
+final class AuthLoading extends AuthState {}

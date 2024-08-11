@@ -5,19 +5,14 @@ import 'package:shoping_app_bloc/screens/auth/sign_in_screen.dart';
 import 'package:shoping_app_bloc/utils/themes/themes.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: AppThemes.lightTheme,
-      home: MultiBlocProvider(
-        providers: [
-          BlocProvider<AuthBloc>(
-            create: (context) => AuthBloc(),
-          ),
-         
-        ],
-        child: const SignInScreen(),
-      ),
-    ),
-  );
+  runApp(MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthBloc>(
+          create: (context) => AuthBloc(),
+        ),
+      ],
+      child: MaterialApp(
+        home: const SignInScreen(),
+        theme: AppThemes.lightTheme,
+      )));
 }

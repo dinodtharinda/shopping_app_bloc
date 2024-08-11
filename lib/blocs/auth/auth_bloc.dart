@@ -20,6 +20,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     try {
+      emit(AuthLoading());
       final email = event.email;
       final password = event.password;
 
@@ -30,7 +31,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         );
         return;
       }
-
       await Future.delayed(
         const Duration(seconds: 1),
         () {
